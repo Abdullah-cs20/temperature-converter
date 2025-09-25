@@ -47,13 +47,6 @@ with st.form("converter_form"):
     submitted = st.form_submit_button("Convert")
 
 
-def parse_number(s):
-    try:
-        return float(str(s).replace(",", "").strip())
-    except ValueError:
-        return None
-
-
 if submitted:
     x = parse_number(input_value)
     if x is None:
@@ -73,4 +66,5 @@ if submitted:
             return s
 
         st.success(f"{fmt(x)} {UNIT_SYMBOL[from_unit]}  →  {fmt(result)} {UNIT_SYMBOL[to_unit]}")
+
 
